@@ -6,22 +6,22 @@ const apis = [
     { 
         imgId: 0,
         link: `https://api.giphy.com/v1/gifs/translate?api_key=${giphykey}&s=scoby doo`,
-      name: 'cat'
+        name: 'dog'
     },
     {
         imgId: 1,
         link: `https://api.giphy.com/v1/gifs/translate?api_key=${giphykey}&s=tom&jery`,
-        name: 'horse'
+        name: 'cat'
     },
     {
         imgId: 2,
         link: `https://api.giphy.com/v1/gifs/translate?api_key=${giphykey}&s=pink panter`,
-        name: 'dog'
+        name: 'panter'
     },
     {
         imgId: 3,
         link: `https://api.giphy.com/v1/gifs/translate?api_key=${giphykey}&s=popeye the sailor`,
-        name: 'rubbit'
+        name: 'popeye'
     }
 ]
 const quotes = [

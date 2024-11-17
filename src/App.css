@@ -64,13 +64,17 @@ img{
   text-align: center;
   z-index: 1;
   font-size: 1.6rem;
-  margin-top: 220px;
+  margin-top: 190px;
   background-color: #cfc9c9;
-  transform: translateY(32px);
-  transform: scaleY(4) rotateX(45deg) rotateZ(10deg);
+  transform: translateY(20px);
 }
 .item{
   background-color: #c1c1c1;
   padding: 5px;
   margin: 5px;
+}
+.name{
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: rgb(250, 231, 209);
 }

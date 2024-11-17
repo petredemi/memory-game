@@ -1,7 +1,7 @@
 import {useEffect, useState } from 'react'
 
 
-let giphykey = 'ZCEnArLfY7WCLDOnb5J33XuAhAv1y1eB'
+let giphykey = 'PplNwMt0cKFCjv2kM9XNbAcaovx2SHHQ'
 const apis = [
     { 
         imgId: 0,

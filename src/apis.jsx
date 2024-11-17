@@ -1,22 +1,22 @@
 import {useEffect, useState } from 'react'
 
 
-let giphykey = 'JrzwgUUBqtzCmoUGiwLp6bwmPYYpScjh'
+let giphykey = 'ZCEnArLfY7WCLDOnb5J33XuAhAv1y1eB'
 const apis = [
     { 
         imgId: 0,
         link: `https://api.giphy.com/v1/gifs/translate?api_key=${giphykey}&s=scoby doo`,
-        name: 'dog'
+        name: 'scoby doo'
     },
     {
         imgId: 1,
         link: `https://api.giphy.com/v1/gifs/translate?api_key=${giphykey}&s=tom&jery`,
-        name: 'cat'
+        name: 'tom & jery'
     },
     {
         imgId: 2,
         link: `https://api.giphy.com/v1/gifs/translate?api_key=${giphykey}&s=pink panter`,
-        name: 'panter'
+        name: 'pink panter'
     },
     {
         imgId: 3,

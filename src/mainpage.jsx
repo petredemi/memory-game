@@ -1,28 +1,10 @@
 import {useEffect, useState, useRef } from 'react'
 import { apis} from './apis.jsx'
 
-function Clock() {
-    const [counter, setCounter] = useState(0);
-    useEffect(() => {
-        const key = setInterval(() => {
-              setCounter(count => count + 1)
-            }, 1000);
-
-       return () => {
-            clearInterval(key);
-       }
-    }, [])
-    return (
-    <>
-      <p>{counter} seconds have passed.</p>
-    </>
-    );
-  }
 function ScoreTabel({points}){
     return(
         <>
-            <h2>Score</h2>
-            <h3>Points: {points}</h3>
+            <h3 className='points'>Points: {points}</h3>
         </>
     )
 } 
@@ -34,7 +16,6 @@ function randomArray (oldarr, newar){
     newar.push(s[0])
     console.log(newar)
 }
-
 function Mainpage(){ 
         const [x, setX] = useState()
         const [tx , setTX] = useState()
@@ -54,18 +35,16 @@ function Mainpage(){
         const inputRef2 = useRef(null);
         const inputRef3 = useRef(null);
         const  Click = () => {
-          //  if(!click){
+            if(!click){
                 setClick(true)
                     for( let i = 0; i < 4; i++){
                     randomArray(apis, ar)
                     }
                     console.log(clikeditem)
                     setClick(false)
-       //     }else{
+            }else{
                 setClick(false)
-          //  }
-       //   Click0()
-
+            }
         }
         function Clicka(refx){
             let r = refx.current.textContent
@@ -95,9 +74,6 @@ function Mainpage(){
             Clicka(inputRef3)
             Click()
         }
-
-
-
         async function getCats(link, setLinks , setTitles){
             fetch(link,{mode:'cors'})
                     .then (function(response){
@@ -118,43 +94,45 @@ function Mainpage(){
     //    console.log(catData)
     //}
 useEffect(() => {
-      const c1 =  getCats(ar[0].link, setX, setTX)
-      const c2 =  getCats(ar[1].link, setY, setTY)
-      const c3 =  getCats(ar[2].link, setZ, setTZ)
-      const c4 =  getCats(ar[3].link, setA, setTA)
+      getCats(ar[0].link, setX, setTX)
+      getCats(ar[1].link, setY, setTY)
+      getCats(ar[2].link, setZ, setTZ)
+      getCats(ar[3].link, setA, setTA)
    return () => {
-       clearInterval(c1, c2, c3, c4);
+       clearInterval();
    }
-}, [click])
+}, [points])
 
     return (
         <>
-        <h1>Try a memory game</h1>
+        <div className="mem-logo">
+            <h2>Try a memory game</h2>
+        </div>
         <ScoreTabel points={points}/>
         <div className="error">{err}</div>
         <div className="grid">   
-            <div className="item" id='11' key= {0} onClick={Click0}>
-                <img src={x} width={'250px'} height={'250px'}  alt="" />
-                <div className="title">{tx}</div>
-                <div className="name" ref={inputRef0} >{ar[0].name}</div>
+            <div className="item" key= {0} onClick={Click0}>
+                <img src={x} alt="" />
+                <div className="title"></div>
+                <div className="name" ref={inputRef0} style={{backgroundColor:'lightgreen'}} >{ar[0].name}</div>
             </div>
             <div className="item" key = '1' onClick={Click1}>
-                <img src= {y} width={'250px'} height={'250px'} alt="" />
-                <div className="title">{ty}</div>
-                <div className="name" ref={inputRef1} >{ar[1].name}</div>
+                <img src= {y} alt="" />
+                <div className="title"></div>
+                <div className="name" style={{backgroundColor:'lightblue'}} ref={inputRef1} >{ar[1].name}</div>
             </div>
             <div className="item" key= '2' onClick={Click2}>
-                <img src= {z} width={'250px'} height={'250px'} alt="" />
-                <div className="title">{tz}</div>
-                <div className="name" ref={inputRef2} >{ar[2].name}</div>
+                <img src= {z} alt="" />
+                <div className="title"></div>
+                <div className="name" ref={inputRef2} style={{backgroundColor:'lightyellow'}} >{ar[2].name}</div>
             </div>
             <div className="item" key='3' onClick={Click3}>
-                <img src= {a} width={'250px'} height={'250px'} alt="" />
-                <div className="title">{ta}</div>
-                <div className="name"ref={inputRef3} >{ar[3].name}</div>
+                <img src= {a}  alt="" />
+                <div className="title"></div>
+                <div className="name"ref={inputRef3}  style={{backgroundColor:'lightorange'}}>{ar[3].name}</div>
             </div>
         </div>
         </>
     )
 }
-export {Mainpage, Clock}
+export {Mainpage}

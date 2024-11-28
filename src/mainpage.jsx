@@ -15,8 +15,8 @@ function randomArray (oldarr, newar){
     newar.push(s[0])
 }
 function Mainpage(){ 
-        const [x, setX] = useState()
-        const [tx , setTX] = useState()
+        const [x, setX] = useState() // item  image link
+        const [tx , setTX] = useState() // item title or id
         const [y, setY] = useState()
         const [ty, setTY] = useState()
         const [z, setZ] = useState()
@@ -30,20 +30,28 @@ function Mainpage(){
         const [err, setErr] = useState()
         const [click, setClick] = useState(false)
         const [ar, setAr] = useState(apis)
-        const text1 = 'congratulation you have a good memory'
-        const text2 = 'your memory is very good'
-        let disply1 = 'none';
-        let disply2 = 'none';
-
+        let text = 'congratulation you have a good memory'
+        const text1 = 'your memory is very good'
+        const text2 = 'you hava a brilliant memory';
+        const text3 = 'your memory is exceptional'
+        let disply = 'none'; //display congratulation message
         const [points, setPoints] = useState(0)
         const [clikeditem, setClickeditem] = useState([])
         if (points == 4){
-            disply1 = 'block';
+            disply = 'block';
         }
         if (points == 6){
-            disply2 = 'block';
+            text = text1;
+            disply = 'block';
         }
-
+        if(points == 10){
+            text = text2;
+            disply = 'block'
+        }
+        if(points == 12){
+            text = text3;
+            disply = 'block'
+        }
         const inputRef0 = useRef(null);
         const inputRef1 = useRef(null);
         const inputRef2 = useRef(null);
@@ -104,7 +112,9 @@ function Mainpage(){
                 })
                 .then (function(response){
                      setLinks(response.data.images.original_still.url)
-                     let txt = response.data.title
+                     let res = response.data.id
+                     console.log(res)
+                     let txt = response.data.id
                    //  setTitles(response.data.title);
                      setTitles(txt.slice(0,20))
                     })
@@ -139,9 +149,7 @@ useEffect(() => {
         </div>
         <ScoreTabel points={points}/>
         <div className="error">{err}</div>
-        <div className="congrats" style={{display: disply1}}>{text1}</div>
-        <div className="congrats" style={{display: disply2}}>{text2}</div>
-
+        <div className="congrats" style={{display: disply}}>{text}</div>
         <div className="grid" >   
             <div className="item" key= {0} onClick={Click0}>
                 <img src={x} alt="" />

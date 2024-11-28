@@ -112,6 +112,7 @@ img{
   font-weight: 600;
   color: red;
   font-size: 0.8rem;text-wrap: wrap;
+  display: none;
 }
 .error{
   color: red;

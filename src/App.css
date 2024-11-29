@@ -48,37 +48,52 @@ body{
   border: 1px solid darkblue;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 1px 1px 10px darkblue;
   margin: 10px;
 }
-h2{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-family: font5;
+p{
+  width: auto;
+  max-width: 340px;
+  padding: 10px;
+  margin-top: 1px;
+  font-size: 1.1rem;
+  text-align: justify;
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+h3{
+  font-family: font4;
   border: 1px solid black;
   width: fit-content;
   padding: 20px;
   border-radius: 20% 0% / 20% 0%;
   box-shadow: 1px 1px 10px black;
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 900;
-  margin: 15px;
-  color: rgb(197, 2, 178);
+  margin-bottom: 1px;
+  margin-top: 10px;
+  color: rgb(14, 0, 119);
   text-shadow: 1px 1px 1px solid black;
 }
 .points{
   border: 1px solid black;
   text-align: left;
   padding-left: 20px;
-  font-family:font2;
-  color: darkblue;
+  font-family:font1;
+  color: rgb(230, 0, 0);
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: fit-content;
   padding: 6px;
   padding-left: 10px;
   padding-right: 20px;
   margin-left: 20px;
-  border: 1px solid blue;
+  margin-bottom: 15px;
+  border: 0px solid rgb(203, 0, 0);
   box-shadow: 1px 1px 10px black;
   border-radius: 20px 0px 20px 0px;
 }
@@ -90,7 +105,7 @@ h2{
 }
 .grid{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   gap: 5px;
   width: max-content;
@@ -143,8 +158,11 @@ img{
   border-radius: 10px 0px 10px 0px;
   box-shadow: 1px 1px 8px black;
 }
-@media(max-width < 450px ){
+@media(max-width:450px ){
   #root{
-    zoom: 0.8;
+    zoom: 0.92;
+  }
+  .grid{
+    grid-template-columns: 1fr 1fr;
   }
 }

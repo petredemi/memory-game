@@ -145,7 +145,10 @@ useEffect(() => {
     return (
         <>
         <div className="mem-logo">
-            <h2>Try a memory game</h2>
+            <h3>Test your memory</h3>
+            <p>touch any picture only once to get points, remember don't touch
+                second time the same picture.
+            </p>
         </div>
         <ScoreTabel points={points}/>
         <div className="error">{err}</div>

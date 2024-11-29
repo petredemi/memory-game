@@ -30,10 +30,11 @@ function Mainpage(){
         const [err, setErr] = useState()
         const [click, setClick] = useState(false)
         const [ar, setAr] = useState(apis)
-        let text = 'congratulation you have a good memory'
-        const text1 = 'your memory is very good'
-        const text2 = 'you hava a brilliant memory';
-        const text3 = 'your memory is exceptional'
+        let text = 'good start, keep going to get points '
+        let text1 = 'congratulation you have a good memory'
+        const text2 = 'your memory is very good'
+        const text3 = 'you hava a brilliant memory';
+        const text4 = 'your memory is exceptional'
         let disply = 'none'; //display congratulation message
         const [points, setPoints] = useState(0)
         const [clikeditem, setClickeditem] = useState([])
@@ -44,13 +45,17 @@ function Mainpage(){
             text = text1;
             disply = 'block';
         }
-        if(points == 10){
+        if(points == 9){
             text = text2;
             disply = 'block'
         }
         if(points == 12){
             text = text3;
             disply = 'block'
+        }
+        if (points == 15){
+            text = text4;
+            disply = 'block';
         }
         const inputRef0 = useRef(null);
         const inputRef1 = useRef(null);

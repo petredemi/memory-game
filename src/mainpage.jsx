@@ -124,7 +124,7 @@ function Mainpage(){
                      setTitles(txt.slice(0,20))
                     })
                     .catch(e => {
-                        setErr('API key expired')
+                        setErr('API key expired, it will be renewed in an hour')
                 })
             }
 //    async function getAnime(){
